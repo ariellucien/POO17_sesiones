@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+import java.lang.Math;
 /**
  *
  * @author administrador1
@@ -39,11 +39,78 @@ public class Numeros {
     public void llenarPrimeList()
     {
         System.out.println("el tamaño de primeList es "+ primeList.length);
+    }      
+    
+    public int max(int a, int b)
+    {
+        if(a > b)
+        {
+            return a;
+        }
+        else
+        {
+            return b;
+        }
     }
     
-    public static void main(String[] args) {
+    public int min(int a, int b)
+    {
+        if(a < b)
+        {
+            return a;        
+        }
+        else
+        {
+            return b;
+        }
+    }
+    
+    public int valorAbsoluto(int numero)
+    {
+        if(numero < 0)
+        {
+            return (numero*-1);
+        }
+        else
+        {
+            return numero;
+        }
+    }
+    
+    public double potencia(double num, double pot)
+    {
+        return Math.pow(num, pot);
+    }
+    
+    public double raizCuadrada(double num)
+    {
+        return Math.sqrt(num);
+    }
+    
+    public static void main(String[] args) 
+    {
+        //Definir la variable de instancia
+        Numeros nombreInstancia;
+        //reservar espacio para la instancia
+        nombreInstancia = new Numeros();
+                
+        // definir y reservar espacio para un double
+        double temporal;
+        
+        //ejecutar método de una instancia y asignar el resultado
+        temporal = nombreInstancia.raizCuadrada(92);
+        
+        //imprimir resultado
+        System.out.println("el resultado es: " + temporal);
+        
+        // ------------------------------------------
+        double temp = nombreInstancia.potencia(8, 22);
+        System.out.println("el res de la pot es: " + temp);
+        
+        
         //Crear instancia de una clase
         //Numeros miInstancia = new Numeros();
+        /*
         Numeros miInstancia;
         miInstancia = new Numeros();
         
@@ -52,5 +119,6 @@ public class Numeros {
         miInstancia.reservarPerfectNaturalList(3000);
         
         miInstancia.llenarPrimeList();
+        */                        
     }    
 }
