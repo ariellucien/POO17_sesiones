@@ -9,8 +9,10 @@ package ArbolesDecision;
  *
  * @author administrador1
  */
-public class DecisionTree {
+public class BinaryTree {
     private Node root = null;
+    private Node temp = null;
+    
     
     void insert(int value)
     {
@@ -23,34 +25,39 @@ public class DecisionTree {
             root.setLeft(null);
             root.setRight(null);
             //asignar valor
-            root.setValue(value);            
+            root.setValue(value); 
+            temp = root;
         }
         else
         {
-            if(value < root.getValue())
+            if(value < temp.getValue())
             { //cuando el número a insertar es menor
-                if(root.left == null)
+                if(temp.left == null)
                 {
                     Node n = new Node();
                     n.setValue(value);
-                    root.left = n;
+                    temp.left = n;
+                    return;
                 }
                 else
                 {
-                    
+                  temp = temp.left;
+                  insert(value);
                 }
             }
             else
             {// cuando el número a insertar es mayor
-                if(root.right == null)
+                if(temp.right == null)
                 {
                     Node n = new Node();
                     n.setValue(value);
-                    root.right = n;
+                    temp.right = n;
+                    return;
                 }
                 else
                 {
-                    
+                    temp = temp.right;
+                    insert(value);
                 }
             }
         }
@@ -69,8 +76,14 @@ public class DecisionTree {
     }
     
     public static void main(String[] args) {
-        DecisionTree dt = new DecisionTree();
-        //dt.insert(8);
+        BinaryTree dt = new BinaryTree();
+        dt.insert(10);
+        dt.insert(8);
+        dt.insert(17);
+        dt.insert(4);
+        dt.insert(9);
+        dt.insert(3);
+        dt.insert(2);
         dt.printTree();
     }
 }
