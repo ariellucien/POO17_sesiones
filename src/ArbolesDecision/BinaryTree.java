@@ -10,8 +10,8 @@ package ArbolesDecision;
  * @author administrador1
  */
 public class BinaryTree {
-    private Node root = null;
-    private Node temp = null;
+    private Node root = null; // la raíz del árbol
+    private Node temp = null; //permite movernos en el árbol
     
     
     void insert(int value)
@@ -65,6 +65,7 @@ public class BinaryTree {
     
     void printTree()
     {
+        
         if(root == null)
         {
             System.out.println("El árbol está vacío");
@@ -73,6 +74,61 @@ public class BinaryTree {
         {
             root.print();
         }
+    }
+    
+    int find(int value, int cont)
+    {
+        if(cont == 0)
+        {
+            temp = root;
+            cont++;
+        }
+        if(temp == null)
+        {
+            return -1;
+        }
+        if(value == temp.getValue())
+        {
+            return value;
+        }
+        if(value < temp.getValue())
+        {
+            temp = temp.left;
+            if(temp == null)
+            {
+                return -1;
+            }                        
+        }
+        else            
+        {        
+            temp = temp.right;
+            if(temp == null)
+            {
+                return -1;
+            }            
+        }
+        return find(value, 1);
+    }
+    
+    void inOrder(int cont)
+    {
+        if(cont == 0)
+        {
+            temp = root;
+        }
+        if(temp == null)
+        {
+            System.out.println("El árbol está vacío");
+            return;
+        }        
+        if(temp.left != null)
+            temp = temp.left;
+        else
+            return;
+        inOrder(1);
+        System.out.println(temp.getValue());
+        temp = temp.right;
+        inOrder(1);
     }
     
     public static void main(String[] args) {
@@ -85,5 +141,10 @@ public class BinaryTree {
         dt.insert(3);
         dt.insert(2);
         dt.printTree();
+        
+        //int res = dt.find(5, 0);
+        //System.out.println("resultado: " + res);
+        
+        dt.inOrder(0);
     }
 }
