@@ -1,0 +1,72 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package practicaExamen2;
+
+/**
+ *
+ * @author administrador1
+ */
+public class Almacen {
+    private Papas [] arrayPapas;
+    private Pepitas [] arrayPepitas;    
+    private Chicles [] arrayChicles;        
+    
+    private int cantidadPapas;
+    private int cantidadPepitas;
+    private int cantidadChicles;
+    
+    public Almacen(int cantidadMaximaDeProductos) 
+    {
+        arrayPapas = new Papas[cantidadMaximaDeProductos];
+        arrayChicles = new Chicles[cantidadMaximaDeProductos];
+        arrayPepitas = new Pepitas[cantidadMaximaDeProductos];
+        
+        cantidadChicles = 0;
+        cantidadPapas = 0;
+        cantidadPepitas = 0;   
+    }
+    
+    public void surtirPapas(Papas papas)
+    {
+        arrayPapas[cantidadPapas] = papas;
+        cantidadPapas++;
+    }
+    
+    public void surtirMuchasPapasEnchiladasBolsa(int cantidad)
+    {
+        for (int i = 0; i < cantidad; i++) 
+        {
+            Papas temp = new Papas(true, "bolsa", 12.0);
+            arrayPapas[cantidadPapas] = temp;
+            cantidadPapas++;
+        }
+    }
+    
+    public void venderUnasPapas()
+    {
+        System.out.println("Aquí tienes tus papas");
+        cantidadPapas--;
+        arrayPapas[cantidadPapas] = null;
+    }
+    
+    public void venderNPapas(int n)
+    {
+        for (int i = 0; i < n; i++) {
+            venderUnasPapas();
+        }
+    }
+    
+    public void surtir(String producto, int precio)
+    {
+        if(producto.equals("papas"))
+        {
+            Papas p = new Papas(true, "bolsa", precio);
+            arrayPapas[cantidadPapas] = p;
+            cantidadPapas++;
+        }
+    }
+}
+
