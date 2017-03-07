@@ -68,5 +68,21 @@ public class Almacen {
             cantidadPapas++;
         }
     }
+    
+    public void valorDeLaTiendita()
+    {
+        double total = 0;
+        for (int i = 0; i < cantidadChicles; i++) {
+            total = total + arrayChicles[i].getPrecio();
+        }
+        for (int i = 0; i < cantidadPapas; i++) {
+            total = total + arrayPapas[i].getPrecio();
+        }
+        for (int i = 0; i < cantidadPepitas; i++) {
+            total = total + arrayPepitas[i].getPrecio();
+        }
+        System.out.println("El valor total de la tiendita es: " + total);
+    }
+    
 }
 
