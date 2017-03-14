@@ -127,7 +127,10 @@ public class BinaryTree {
             return;
         inOrder(1);
         System.out.println(temp.getValue());
-        temp = temp.right;
+        if(temp.right != null)
+            temp = temp.right;
+        else
+            return;       
         inOrder(1);
     }
     
@@ -136,10 +139,7 @@ public class BinaryTree {
         dt.insert(10);
         dt.insert(8);
         dt.insert(17);
-        dt.insert(4);
-        dt.insert(9);
-        dt.insert(3);
-        dt.insert(2);
+        dt.insert(4);        
         dt.printTree();
         
         //int res = dt.find(5, 0);
