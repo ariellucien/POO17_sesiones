@@ -37,9 +37,17 @@ public class Enumeradores {
     public static void main(String[] args) {
         Enumeradores e = new Enumeradores();    
         Scanner s = new Scanner(System.in);
-        e.seleccionaMesDeNacimiento(MES.enero);
+        
+        MES temporal = MES.valueOf(s.nextLine());
+        
+        e.seleccionaMesDeNacimiento(temporal);
         
         System.out.println("Mi mes de nacimiento es:");
         System.out.println(e.getMesNacimiento());
+        
+        System.out.println("Cúal es tu día favorito:");
+        DIA tmp2 = DIA.valueOf(s.nextLine());
+        System.out.println("a mi tb me encantan los " + tmp2);
+        
     }
 }
