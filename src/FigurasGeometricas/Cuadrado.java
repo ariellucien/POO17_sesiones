@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package personasTrabajadoras;
+package FigurasGeometricas;
 
 /**
  *
  * @author administrador1
  */
-public class PersonalAdministrativo 
-{
+public class Cuadrado {
     
 }

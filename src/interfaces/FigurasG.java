@@ -3,13 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package personasTrabajadoras;
+package interfaces;
 
 /**
  *
  * @author administrador1
  */
-public class PersonalAdministrativo 
-{
+//interfaces sólo definen comportamiento, no lo implementan
+public interface FigurasG {
+    public void quienSoy();
+    public double getArea();
     
+    public static final double PI= 3.1416;        
 }

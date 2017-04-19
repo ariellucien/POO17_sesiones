@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package personasTrabajadoras;
+package Polimorfismo;
 
 /**
  *
  * @author administrador1
  */
-public class PersonalAdministrativo 
-{
-    
+public interface FiguraG {
+    public static final double pi=3.14159;
+    public double getArea();    
 }
