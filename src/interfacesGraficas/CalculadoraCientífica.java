@@ -64,6 +64,7 @@ public class CalculadoraCientífica extends javax.swing.JFrame {
                     texto.setText("");
                     value1 = value1+value2;                                        
                     System.out.println(value1);
+                    texto.setText("");
                     texto.setText(value1+"");                                        
                     operacion = suma.getActionCommand();
                 }                                
@@ -222,14 +223,14 @@ public class CalculadoraCientífica extends javax.swing.JFrame {
                                 .addComponent(multiplicacion)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(division)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 65, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(uno)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(dos)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(igual)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,7 +250,7 @@ public class CalculadoraCientífica extends javax.swing.JFrame {
                     .addComponent(uno)
                     .addComponent(dos)
                     .addComponent(igual))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
 
         pack();
