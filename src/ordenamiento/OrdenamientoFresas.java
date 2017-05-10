@@ -7,6 +7,7 @@ package ordenamiento;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
@@ -38,7 +39,7 @@ public class OrdenamientoFresas {
         
         Collections.sort(lista);
         
-        
+        System.out.println("Las fresas ya ordenadas");
         for(Iterator i = lista.iterator(); i.hasNext();)
         {
             System.out.println("fresa " + ((Fresa)i.next()).getFrescuraDeLaFruta());

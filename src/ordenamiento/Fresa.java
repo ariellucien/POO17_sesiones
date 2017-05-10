@@ -11,7 +11,24 @@ package ordenamiento;
  */
 public class Fresa implements Comparable<Fresa>
 {
-    public enum Frescura{MADURA, ALPUNTO, VERDE};
+
+    @Override
+    public int compareTo(Fresa o) {
+        if(frescuraDeLaFruta.ordinal() > o.frescuraDeLaFruta.ordinal())
+        {
+            return 1;
+        }
+        else
+        {
+            if(frescuraDeLaFruta.ordinal() < o.frescuraDeLaFruta.ordinal())
+            {
+                return -1;
+            }
+            else
+                return 0;
+        }
+    }
+    public enum Frescura{VERDE, ALPUNTO, MADURA};
     
     protected Frescura frescuraDeLaFruta;
 
